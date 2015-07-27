@@ -2,20 +2,15 @@ package com.almundo.automation.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Class that defines the airlines on the request parameters using Search
- * service
- * 
- * @author zenen.morales
- *
- */
-public class Airline {
+public class Origin {
 
 	@JsonProperty("catalog_id")
 	private String catalogId;
 
+	@JsonProperty("code")
 	private String code;
 
+	@JsonProperty("name")
 	private String name;
 
 	public String getCatalogId() {

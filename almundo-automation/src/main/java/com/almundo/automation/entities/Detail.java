@@ -1,6 +1,6 @@
 package com.almundo.automation.entities;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * 
@@ -9,20 +9,16 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Detail {
 
-	@SerializedName("adults")
 	private float adultPrice;
 
-	@SerializedName("children")
 	private float childPrice;
 
-	@SerializedName("infants")
 	private float infantPrice;
 
-	@SerializedName("taxes")
 	private float taxes;
 
-	@SerializedName("extra_tax")
-	private float extra_tax;
+	@JsonProperty("extra_tax")
+	private float extraTax;
 
 	public float getAdultPrice() {
 		return adultPrice;
@@ -56,12 +52,12 @@ public class Detail {
 		this.taxes = taxes;
 	}
 
-	public float getExtra_tax() {
-		return extra_tax;
+	public float getExtraTax() {
+		return extraTax;
 	}
 
-	public void setExtra_tax(float extra_tax) {
-		this.extra_tax = extra_tax;
+	public void setExtraTax(float extraTax) {
+		this.extraTax = extraTax;
 	}
 
 }

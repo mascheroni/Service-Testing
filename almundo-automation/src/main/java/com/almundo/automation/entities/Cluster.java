@@ -1,6 +1,8 @@
 package com.almundo.automation.entities;
 
-import com.google.gson.annotations.SerializedName;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * 
@@ -9,21 +11,20 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Cluster {
 
-	private Segment segment;
+	private List<Segments> segments;
 	private Price price;
 
-	@SerializedName("domestic")
 	private boolean domestic;
 
-	@SerializedName("validating_carrier")
-	private String validating_carrier;
+	@JsonProperty("validating_carrier")
+	private String validatingCarrier;
 
-	public Segment getSegment() {
-		return segment;
+	public List<Segments> getSegments() {
+		return segments;
 	}
 
-	public void setSegment(Segment segment) {
-		this.segment = segment;
+	public void setSegments(List<Segments> segments) {
+		this.segments = segments;
 	}
 
 	public Price getPrice() {
@@ -42,12 +43,12 @@ public class Cluster {
 		this.domestic = domestic;
 	}
 
-	public String getValidating_carrier() {
-		return validating_carrier;
+	public String getValidatingCarrier() {
+		return validatingCarrier;
 	}
 
-	public void setValidating_carrier(String validating_carrier) {
-		this.validating_carrier = validating_carrier;
+	public void setValidatingCarrier(String validatingCarrier) {
+		this.validatingCarrier = validatingCarrier;
 	}
 
 }

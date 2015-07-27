@@ -3,6 +3,8 @@ package com.almundo.automation.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Class that represent the response of search flights using Search service
  * 
@@ -18,12 +20,10 @@ public class SearchFlights implements Serializable {
 
 	private String id;
 
-	private List<LowestPricesByAirline> lowest_prices_by_airline;
+	@JsonProperty("lowest_prices_by_airline")
+	private List<LowestPricesByAirline> lowestPricesByAirline;
 	private List<Cluster> clusters;
 	private List<Filter> filters;
-
-	public SearchFlights() {
-	}
 
 	public String getId() {
 		return id;
@@ -32,16 +32,14 @@ public class SearchFlights implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
-	
 
 	public List<LowestPricesByAirline> getLowestPricesByAirline() {
-		return lowest_prices_by_airline;
+		return lowestPricesByAirline;
 	}
 
 	public void setLowestPricesByAirline(
-			List<LowestPricesByAirline> lowest_prices_by_airline) {
-		this.lowest_prices_by_airline = lowest_prices_by_airline;
+			List<LowestPricesByAirline> lowestPricesByAirline) {
+		this.lowestPricesByAirline = lowestPricesByAirline;
 	}
 
 	public List<Cluster> getClusters() {

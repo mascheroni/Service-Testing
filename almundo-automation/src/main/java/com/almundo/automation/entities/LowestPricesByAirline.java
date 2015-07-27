@@ -1,6 +1,6 @@
 package com.almundo.automation.entities;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * This class defines the POJO that contains the response of airlines on the
@@ -11,14 +11,15 @@ import java.util.List;
  */
 public class LowestPricesByAirline {
 
-	private List<Airline> airlines;
+	@JsonProperty("airline")
+	private Airline airline;
 
-	public List<Airline> getAirlines() {
-		return airlines;
+	public Airline getAirline() {
+		return airline;
 	}
 
-	public void setAirlines(List<Airline> airlines) {
-		this.airlines = airlines;
+	public void setAirline(Airline airline) {
+		this.airline = airline;
 	}
 
 }
