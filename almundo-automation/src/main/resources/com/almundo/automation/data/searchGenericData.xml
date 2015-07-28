@@ -1,8 +1,8 @@
 <dataSet>
-	<name>APISearch</name>
+	<name>searchGenericData</name>
 	<dataRows>
 		<dataRow>
-			<name>APISearch001</name>
+			<name>01</name>
 			<dataObjects>
 				<dataObject>
 					<name>date</name>
@@ -39,7 +39,7 @@
 			</dataObjects>
 		</dataRow>
 		<dataRow>
-			<name>APISearch002</name>
+			<name>02</name>
 			<dataObjects>
 				<dataObject>
 					<name>date</name>
@@ -76,7 +76,7 @@
 			</dataObjects>
 		</dataRow>
 		<dataRow>
-			<name>APISearch003</name>
+			<name>03</name>
 			<dataObjects>
 				<dataObject>
 					<name>date</name>
@@ -113,7 +113,7 @@
 			</dataObjects>
 		</dataRow>
 		<dataRow>
-			<name>APISearch004</name>
+			<name>04</name>
 			<dataObjects>
 				<dataObject>
 					<name>date</name>
