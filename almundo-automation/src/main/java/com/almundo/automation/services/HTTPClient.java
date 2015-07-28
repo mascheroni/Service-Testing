@@ -10,13 +10,28 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import com.almundo.automation.utils.EncryptKey;
+import com.almundo.automation.utils.PropertyReader;
+
 public class HTTPClient {
+	
+	private static final String PROP_FILE = "conf/conf.properties";
+	private static final String UOW_KEY = "glbUserName";
+	private static final String API_KEY = "API-Key";
+	
 
 	private HttpEntity<String> addAlmundoHeaders() {
+		PropertyReader propertyReader = new PropertyReader();
 		HttpHeaders headers = new HttpHeaders();
+		
+		String uow = propertyReader.getPropertiesValues(UOW_KEY, PROP_FILE);
+		String encryptedKey = propertyReader.getPropertiesValues(API_KEY, PROP_FILE);
+		String apiKey = EncryptKey.decryptText(encryptedKey);
+		
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-		headers.set("X-UOW", "gbl-agustin");
-	 	headers.set("X-ApiKey", "5592f8fd99325b40cba48649");
+		 
+		headers.set("X-UOW", uow);
+	 	headers.set("X-ApiKey", apiKey);
 	 	return new HttpEntity<String>(headers);
 	}
 	
