@@ -13,8 +13,8 @@ public class Utils {
 		String departureDate;
 		String returnDate;
 		String reqDate;
-		if (date.contains("-")) {
-			dates = date.split("-");
+		if (date.contains("/")) {
+			dates = date.split("/");
 			departureDate = getStringDate(dates [0].trim());
 			returnDate = getStringDate(dates [1].trim());
 			reqDate = departureDate + "," + returnDate;

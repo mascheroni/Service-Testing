@@ -15,5 +15,12 @@ public class DataProviders {
 		factory.initialize("../src/main/resources/com/almundo/automation/data/");
 		return factory.getArrayFromDataSet("APISearch");
 	}
+	
+	@DataProvider(name = "searchOldDates")
+	public static Object[][] getSearchOldDates() throws IOException {
+		XmlDataFactory factory = XmlDataFactory.getInstance();
+		factory.initialize("../src/main/resources/com/almundo/automation/data/");
+		return factory.getArrayFromDataSet("searchOldDates");
+	}
 
 }
