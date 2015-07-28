@@ -14,7 +14,7 @@ public class FlightSearchTests extends BaseTest {
 	
 	SearchService searchService;
 
-	@BeforeClass
+	@BeforeClass( groups = {"flight-search"} )
 	public void setUp() {
 		searchService = new SearchService();
 	}

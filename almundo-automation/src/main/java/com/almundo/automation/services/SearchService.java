@@ -29,7 +29,6 @@ public class SearchService extends GenericService {
 		} catch (HttpClientErrorException e) {
 			return createResponse(null, e.getStatusCode().value(), e.getResponseBodyAsString());
 		} catch (Exception e) {
-			System.out.println("Exception");
 			e.printStackTrace();
 			return createResponse(null, 0, "Generic Exception");
 		}
