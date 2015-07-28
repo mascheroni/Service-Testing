@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author zenen.morales
  *
  */
-public class SearchFlights implements Serializable {
+public class FlightResults implements Serializable {
 
 	/**
 	 * 
