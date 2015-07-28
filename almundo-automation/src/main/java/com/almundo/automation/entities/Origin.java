@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Origin {
 
 	@JsonProperty("catalog_id")
-	private String catalogId;
+	private Integer catalogId;
 
 	@JsonProperty("code")
 	private String code;
@@ -13,11 +13,11 @@ public class Origin {
 	@JsonProperty("name")
 	private String name;
 
-	public String getCatalogId() {
+	public Integer getCatalogId() {
 		return catalogId;
 	}
 
-	public void setCatalogId(String catalogId) {
+	public void setCatalogId(Integer catalogId) {
 		this.catalogId = catalogId;
 	}
 

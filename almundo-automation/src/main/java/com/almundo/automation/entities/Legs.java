@@ -1,7 +1,5 @@
 package com.almundo.automation.entities;
 
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Legs {
@@ -10,16 +8,16 @@ public class Legs {
 	private Destination destination;
 
 	@JsonProperty("departure_date")
-	private Date departureDate;
+	private String departureDate;
 
-	// @JsonProperty("departure_time")
-	// private DateTime departureTime;
+	@JsonProperty("departure_time")
+	private String departureTime;
 
 	@JsonProperty("arrival_date")
-	private Date arrivalDate;
+	private String arrivalDate;
 
-	// @JsonProperty("arrival_time")
-	// private DateTime arrivalTime;
+	@JsonProperty("arrival_time")
+	private String arrivalTime;
 
 	@JsonProperty("marketing_carrier")
 	private MarketingCarrier marketingCarrier;
@@ -27,7 +25,8 @@ public class Legs {
 	@JsonProperty("operating_carrier")
 	private OperatingCarrier operatingCarrier;
 
-	private int number;
+	@JsonProperty("number")
+	private Integer number;
 
 	@JsonProperty("cabin_type")
 	private String cabinType;
@@ -36,10 +35,10 @@ public class Legs {
 	private String flightClass;
 
 	@JsonProperty("technical_stop")
-	private String technicalStop;
+	private TechnicalStop technicalStop;
 
-	// @JsonProperty("flight_duration")
-	// private String flightDuration;
+	@JsonProperty("flight_duration")
+	private String flightDuration;
 
 	public Origin getOrigin() {
 		return origin;
@@ -57,19 +56,19 @@ public class Legs {
 		this.destination = destination;
 	}
 
-	public Date getDepartureDate() {
+	public String getDepartureDate() {
 		return departureDate;
 	}
 
-	public void setDepartureDate(Date departureDate) {
+	public void setDepartureDate(String departureDate) {
 		this.departureDate = departureDate;
 	}
 
-	public Date getArrivalDate() {
+	public String getArrivalDate() {
 		return arrivalDate;
 	}
 
-	public void setArrivalDate(Date arrivalDate) {
+	public void setArrivalDate(String arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
@@ -89,11 +88,11 @@ public class Legs {
 		this.operatingCarrier = operatingCarrier;
 	}
 
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 
@@ -112,13 +111,39 @@ public class Legs {
 	public void setFlightClass(String flightClass) {
 		this.flightClass = flightClass;
 	}
-
-	public String getTechnicalStop() {
+	
+	public TechnicalStop getTechnicalStop() {
 		return technicalStop;
 	}
 
-	public void setTechnicalStop(String technicalStop) {
+	public void setTechnicalStop(TechnicalStop technicalStop) {
 		this.technicalStop = technicalStop;
 	}
+
+	public String getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public String getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+
+	public String getFlightDuration() {
+		return flightDuration;
+	}
+
+	public void setFlightDuration(String flightDuration) {
+		this.flightDuration = flightDuration;
+	}
+	
+	
 
 }

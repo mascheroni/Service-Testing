@@ -6,14 +6,27 @@ import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
 import java.net.Proxy;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+
+
+
+//import com.almundo.automation.entities.FlightResults;
 import com.almundo.automation.services.Parameters;
 import com.almundo.automation.utils.EncryptKey;
 import com.almundo.automation.utils.PropertyReader;
@@ -27,9 +40,24 @@ public class HTTPClient {
 	private Scanner scanner;
 	private PropertyReader pr = new PropertyReader();
 	
-	public void get(){
-		
+	private HttpEntity<String> addAlmundoHeaders() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		headers.set("X-UOW", "gbl-agustin");
+	 	headers.set("X-ApiKey", "5592f8fd99325b40cba48649");
+	 	return new HttpEntity<String>(headers);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public ResponseEntity<Object> get(URI url, Class<?> type){
+		RestTemplate template = new RestTemplate();
+		HttpEntity<String> entity = this.addAlmundoHeaders();
+		return (ResponseEntity<Object>) template.exchange(url, HttpMethod.GET, entity, type);	
+	}
+	
+	
+	
+	
 
 	public void addHeaderValue(String key, String value) {
 		this.urlConnection.addRequestProperty(key, value);

@@ -1,6 +1,5 @@
 package com.almundo.automation.entities;
 
-import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,16 +9,16 @@ public class Choices {
 	private String id;
 
 	@JsonProperty("departure_date")
-	private Date departureDate;
+	private String departureDate;
 
-	// @JsonProperty("departure_time")
-	// private DateTime departureTime;
+	@JsonProperty("departure_time")
+	private String departureTime;
 
 	@JsonProperty("arrival_date")
-	private Date arrivalDate;
+	private String arrivalDate;
 
-	// @JsonProperty("arrival_time")
-	// private DateTime arrivalTime;
+	@JsonProperty("arrival_time")
+	private String arrivalTime;
 
 	private Origin origin;
 	private Destination destination;
@@ -33,19 +32,19 @@ public class Choices {
 		this.id = id;
 	}
 
-	public Date getDepartureDate() {
+	public String getDepartureDate() {
 		return departureDate;
 	}
 
-	public void setDepartureDate(Date departureDate) {
+	public void setDepartureDate(String departureDate) {
 		this.departureDate = departureDate;
 	}
 
-	public Date getArrivalDate() {
+	public String getArrivalDate() {
 		return arrivalDate;
 	}
 
-	public void setArrivalDate(Date arrivalDate) {
+	public void setArrivalDate(String arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
@@ -72,5 +71,23 @@ public class Choices {
 	public void setLegs(List<Legs> legs) {
 		this.legs = legs;
 	}
+
+	public String getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public String getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+	
+	
 
 }
