@@ -9,55 +9,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Detail {
 
-	private float adultPrice;
+	@JsonProperty("adults")
+	private Float adultPrice;
 
-	private float childPrice;
+	@JsonProperty("children")
+	private Float childPrice;
 
-	private float infantPrice;
-
-	private float taxes;
+	@JsonProperty("infants")
+	private Float infantPrice;
+	
+	@JsonProperty("taxes")
+	private Float taxes;
+	
+	@JsonProperty("charges")
+	private Float charges;
+	
+	@JsonProperty("fee")
+	private Float fee;
 
 	@JsonProperty("extra_tax")
-	private float extraTax;
+	private Float extraTax;
 
-	public float getAdultPrice() {
+	public Float getAdultPrice() {
 		return adultPrice;
 	}
 
-	public void setAdultPrice(float adultPrice) {
+	public void setAdultPrice(Float adultPrice) {
 		this.adultPrice = adultPrice;
 	}
 
-	public float getChildPrice() {
+	public Float getChildPrice() {
 		return childPrice;
 	}
 
-	public void setChildPrice(float childPrice) {
+	public void setChildPrice(Float childPrice) {
 		this.childPrice = childPrice;
 	}
 
-	public float getInfantPrice() {
+	public Float getInfantPrice() {
 		return infantPrice;
 	}
 
-	public void setInfantPrice(float infantPrice) {
+	public void setInfantPrice(Float infantPrice) {
 		this.infantPrice = infantPrice;
 	}
 
-	public float getTaxes() {
+	public Float getTaxes() {
 		return taxes;
 	}
 
-	public void setTaxes(float taxes) {
+	public void setTaxes(Float taxes) {
 		this.taxes = taxes;
 	}
 
-	public float getExtraTax() {
+	public Float getExtraTax() {
 		return extraTax;
 	}
 
-	public void setExtraTax(float extraTax) {
+	public void setExtraTax(Float extraTax) {
 		this.extraTax = extraTax;
 	}
+
+	public Float getCharges() {
+		return charges;
+	}
+
+	public void setCharges(Float charges) {
+		this.charges = charges;
+	}
+
+	public Float getFee() {
+		return fee;
+	}
+
+	public void setFee(Float fee) {
+		this.fee = fee;
+	}
+	
+	
 
 }

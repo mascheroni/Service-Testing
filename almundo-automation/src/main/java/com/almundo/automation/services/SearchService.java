@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 
 import com.almundo.automation.entities.FlightResults;
 import com.almundo.automation.utils.PropertyReader;
@@ -27,6 +28,8 @@ public class SearchService extends GenericService {
 			ResponseEntity<Object> response =  client.get(uri, FlightResults.class);
 			return createResponse(response, response.getStatusCode().value(), "Success!");
 		} catch (HttpClientErrorException e) {
+			return createResponse(null, e.getStatusCode().value(), e.getResponseBodyAsString());
+		} catch (HttpServerErrorException e) {
 			return createResponse(null, e.getStatusCode().value(), e.getResponseBodyAsString());
 		} catch (Exception e) {
 			e.printStackTrace();
