@@ -36,4 +36,13 @@ public class Utils {
 		return format.format(calendar.getTime());
 	}
 
+	public static float getNonNullValueOf(Object value) {
+		if (value != null) {
+			return (Float) value;
+		} else {
+			return 0;
+		}
+
+	}
+
 }
