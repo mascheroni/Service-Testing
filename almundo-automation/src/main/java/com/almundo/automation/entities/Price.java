@@ -11,6 +11,8 @@ public class Price {
 
 	private Detail detail;
 
+	private Currency currency;
+	
 	public float getTotal() {
 		return total;
 	}
@@ -25,6 +27,14 @@ public class Price {
 
 	public void setDetail(Detail detail) {
 		this.detail = detail;
+	}
+
+	public Currency getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(Currency currency) {
+		this.currency = currency;
 	}
 
 }
